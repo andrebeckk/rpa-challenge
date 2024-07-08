@@ -191,7 +191,7 @@ def get_news_picture(element):
             decoded_url = unquote(encoded_url)
             file_name = decoded_url.split("/")[-1] + ".jpeg"
 
-            download_file(decoded_url, OUTPUT_DIR / 'images', file_name)
+            download_file(decoded_url, OUTPUT_DIR, file_name)
             return file_name
         else:
             return None
