@@ -44,8 +44,7 @@ def solve_challenge():
 
         # Check if a ad banner appears and close it
         try:
-            browser.wait_until_element_is_visible("css:.fancybox-item fancybox-close", timeout=10)
-            browser.click_element("css:.fancybox-item fancybox-close", timeout=10)
+            wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,"#onetrust-accept-btn-handler"))).click()
         except:
             pass
 
