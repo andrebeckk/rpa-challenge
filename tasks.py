@@ -40,6 +40,15 @@ def solve_challenge():
         wait = WebDriverWait(browser.driver, 10)
 
         # Locate and click the search button
+
+
+        # Check if a ad banner appears and close it
+        try:
+            browser.wait_until_element_is_visible("css:.fancybox-item fancybox-close", timeout=10)
+            browser.click_element("css:.fancybox-item fancybox-close", timeout=10)
+        except:
+            pass
+
         logger.info("Locating and clicking the search button.")
         browser.wait_until_element_is_visible("css:.SearchOverlay", timeout=10)
         browser.click_element("css:.SearchOverlay")
