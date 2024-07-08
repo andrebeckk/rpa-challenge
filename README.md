@@ -49,7 +49,7 @@ $ git clone https://github.com/andrebeckk/rpa-challenge/
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/andrebeckk" target="_blank">André Becker</a>
+Made with :heart: by <a href="https://www.linkedin.com/in/andre-becker-2bb14b182/" target="_blank">André Becker</a>
 
 &#xa0;
 
