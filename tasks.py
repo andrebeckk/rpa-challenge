@@ -36,13 +36,13 @@ def solve_challenge():
     try:
         # Open browser and navigate to "https://apnews.com"
         logger.info("Opening the browser and navigating to https://apnews.com")
-        browser.open_chrome_browser(url="https://apnews.com", maximized=True, headless=True)
+        browser.open_chrome_browser(url="https://apnews.com", maximized=True, headless=False)
         wait = WebDriverWait(browser.driver, 10)
 
         # Locate and click the search button
         logger.info("Locating and clicking the search button.")
-        browser.wait_until_element_is_visible("css:.SearchOverlay-search-button", timeout=10)
-        browser.click_element("css:.SearchOverlay-search-button")
+        browser.wait_until_element_is_visible("css:.SearchOverlay", timeout=10)
+        browser.click_element("css:.SearchOverlay")
 
         # Fill search field with the search phrase variable
         logger.info(f"Filling the search field with the phrase: {work_item['search_phrase']}")
