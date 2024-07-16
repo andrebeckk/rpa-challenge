@@ -36,7 +36,7 @@ def solve_challenge():
     try:
         # Open browser and navigate to "https://apnews.com"
         logger.info("Opening the browser and navigating to https://apnews.com")
-        browser.open_chrome_browser(url="https://apnews.com", maximized=True, headless=False)
+        browser.open_chrome_browser(url="https://apnews.com", maximized=True, headless=True)
         wait = WebDriverWait(browser.driver, 10)
 
         # Locate and click the search button
@@ -129,8 +129,8 @@ def solve_challenge():
 def get_search_list_results(browser):
     try:
         wait = WebDriverWait(browser.driver, 10)
-        wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "div.SearchResultsModule-results > bsp-list-loadmore > div.PageList-items")))
-        search_result = browser.find_element("css:.SearchResultsModule-results .PageListStandardD .PageList-items")
+        wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "div.SearchResultsModule-results > div.PageList-items")))
+        search_result = browser.find_element("css:.SearchResultsModule-results .PageList-items")
         search_result_list = search_result.find_elements(By.CLASS_NAME, "PageList-items-item")
         return search_result_list
     except Exception as e:
